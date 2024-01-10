@@ -137,9 +137,10 @@
         // document.getElementById("pct").innerHTML = Math.round(inPct).toFixed(1);
         document.getElementById("pgs").ariaValueNow = Math.round(inPct);
         document.getElementById("pgs").style.width = Math.round(inPct)+"%";
-        const desctn = "It's" + diffDays + "Days into 2024, " + pcts + "% complete."
+        const desctn = "It's" + diffDays + "Days into 2024, " + pcts + "% complete."r
+        console.log(desctn)
 
-        document.getElementsByTagName('meta').namedItem('desciption').setAttribute('content',desctn)
+        // document.getElementsByTagName('meta').namedItem('desciption').setAttribute('content',desctn)
         document.getElementsByTagName('meta').namedItem('twitter:title').setAttribute('content',desctn)
 
 
