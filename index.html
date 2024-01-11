@@ -126,20 +126,27 @@
 
     <script>
         const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+        // const firstDate = new Date(1704038400000);
         const firstDate = new Date("2024-01-01");
         const secondDate = new Date();
+        console.log(secondDate)
+        console.log(firstDate)
 
-        const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+        const diffDays = Math.ceil(Math.abs((firstDate - secondDate) / oneDay));
         const inPct = diffDays/366*100;
+        console.log(diffDays)
+        console.log(firstDate-secondDate)
+        console.log(oneDay)
+
 
         document.getElementById("date").innerHTML = new Date().getFullYear();
         document.getElementById("day").innerHTML = diffDays  ;
-        document.getElementById("pct").innerHTML = Math.round(inPct);
-        document.getElementById("pcts").innerHTML = Math.round(inPct) +"% complete";
+        document.getElementById("pct").innerHTML = Math.ceil(inPct);
+        document.getElementById("pcts").innerHTML = Math.ceil(inPct) +"% complete";
         // document.getElementById("pct").innerHTML = Math.round(inPct).toFixed(1);
-        document.getElementById("pgs").ariaValueNow = Math.round(inPct);
-        document.getElementById("pgs").style.width = Math.round(inPct)+"%";
-        const desctn = "It's " + diffDays + " Days into 2024, " + Math.round(inPct) + "% complete."
+        document.getElementById("pgs").ariaValueNow = Math.ceil(inPct);
+        document.getElementById("pgs").style.width = Math.ceil(inPct)+"%";
+        const desctn = "It's " + diffDays + " Days into 2024, " + Math.ceil(inPct) + "% complete."
         console.log(desctn)
 
         // document.getElementsByTagName('meta').namedItem('desciption').setAttribute('content',desctn)
